@@ -18,18 +18,29 @@
       <h2>Welcome to weathery</h2>
     </div>
     <form>
-      <label for="location" class="location-label">Search for a location to view its weather forecast</label>
-      <input type="text" id="location" class="location" name="location" placeholder="Search Location...">
+      <label for="location" class="location-label">Search for location to view weather</label>
+      <div class="input-container">
+        <div class="searchbar-container">
+          <input type="text" id="location" class="location-input" name="location" placeholder="Search Location...">
+          <button type="button">Search</button>
+        </div>
 
-      <label for="unitSwitch" class="unit-switch-label">
-        <input type="checkbox" class="unit-switch">
-        <span>C°</span>
-        <span>F°</span>
-      </label>
+
+        <div class="switch-container">
+          <input type="checkbox" class="unit-switch" id="unitSwitch" role="switch" checked>
+          <div class="unit-container">
+            <span>C°</span>
+            <span>F°</span>
+          </div>
+        </div>
+      </div>
+
     </form>
+
+    <div class="weather-display" id="weatherDisplay" </div>
   </main>
 
-  <footer>&copy; 2025 Copyright - TheNowl</footer>
+  <footer>Copyright &copy; 2025 - TheNowl</footer>
 </body>
 
 </html>
