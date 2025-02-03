@@ -1,0 +1,163 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+/*
+  9. Create a root stacking context (Only needed with React, etc.
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ACTUAL CSS */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #1b1530;
+  color: rgb(212, 212, 212);
+  height: 100vh;
+  padding: 20px 40px;
+}
+header,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 10%;
+  max-height: 40px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+
+  margin-top: 40px;
+}
+
+form {
+  height: 75%;
+  width: 100%;
+}
+
+.location-label {
+  display: block;
+}
+
+.location {
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 75%;
+  height: 2rem;
+}
+
+.unit-switch {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.unit-switch-label {
+  vertical-align: bottom;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 20%;
+  height: 2rem;
+  background: grey;
+  display: inline-flex;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.unit-switch-label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(50% - 4px);
+  height: calc(100% - 4px);
+  background: #fff;
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+
+.unit-switch:checked + .unit-switch-label {
+  background: #bada55;
+}
+
+.unit-switch:checked + .unit-switch-label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.unit-switch-label:active:after {
+  width: 60%;
+}
+
+.unit-switch-label > span {
+  font-size: 2rem;
+  z-index: 200;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: black;
+  width: 100%;
+}
