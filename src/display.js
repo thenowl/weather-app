@@ -1,5 +1,4 @@
 import { fetchWeatherData, getWeather } from './weather';
-// import icon from `./icons/${weather[0].icon}.svg`;
 
 function importAll(r) {
   const icons = {};
@@ -319,7 +318,7 @@ function createForm() {
 
 // INITIALIZE PAGE:
 
-function initPageLoad() {
+export default function initPageLoad() {
   const userInteractContainer = document.querySelector(
     '#userInteractContainer',
   );
@@ -340,5 +339,3 @@ function initPageLoad() {
 
 const weathery = document.querySelector('h1');
 weathery.addEventListener('click', initPageLoad);
-
-export { initPageLoad, createForm, renderWeatherData, toggleUnits };

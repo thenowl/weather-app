@@ -47,7 +47,6 @@ function processWeatherData(weatherData) {
 }
 
 const getWeather = () => weather;
-const getWeatherIcons = weather.map((day) => day.icon);
 
 async function fetchWeatherData(location) {
   const metric = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=C5B8EVPQXT8CZT8QEQPRH7VPZ`;
@@ -67,4 +66,4 @@ async function fetchWeatherData(location) {
   }
 }
 
-export { getWeather, getWeatherIcons, fetchWeatherData };
+export { getWeather, fetchWeatherData };

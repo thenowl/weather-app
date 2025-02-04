@@ -1,4 +1,4 @@
 import './styles.css';
-import { initPageLoad } from './display';
+import initPageLoad from './display';
 
 initPageLoad();
