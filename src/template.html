@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>weathery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -14,30 +15,8 @@
   </header>
 
   <main>
-    <div class="welcome-container">
-      <h2>Welcome to weathery</h2>
-    </div>
-    <form>
-      <label for="location" class="location-label">Search for location to view weather</label>
-      <div class="input-container">
-        <div class="searchbar-container">
-          <input type="text" id="location" class="location-input" name="location" placeholder="Search Location...">
-          <button type="button">Search</button>
-        </div>
-
-
-        <div class="switch-container">
-          <input type="checkbox" class="unit-switch" id="unitSwitch" role="switch" checked>
-          <div class="unit-container">
-            <span>C°</span>
-            <span>F°</span>
-          </div>
-        </div>
-      </div>
-
-    </form>
-
-    <div class="weather-display" id="weatherDisplay" </div>
+    <div class="user-interaction-container" id="userInteractContainer"></div>
+    <div class="weather-display" id="weatherDisplay"></div>
   </main>
 
   <footer>Copyright &copy; 2025 - TheNowl</footer>
