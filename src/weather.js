@@ -61,8 +61,7 @@ async function fetchWeatherData(location) {
     ]);
     return processWeatherData([weatherDataMetric, weatherDataFahrenheit]);
   } catch (error) {
-    console.log(error);
-    return error;
+    return error.message;
   }
 }
 

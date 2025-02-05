@@ -16,10 +16,31 @@ async function renderWeatherData() {
   const locationInput = document.querySelector('#location').value;
   const unit = document.querySelector('#unitSwitch');
   const weatherDisplay = document.querySelector('#weatherDisplay');
+  weatherDisplay.textContent = '';
 
   if (!locationInput) return;
 
+  const loadingCircle = document.createElement('span');
+  loadingCircle.classList.add('loading-circle');
+  weatherDisplay.appendChild(loadingCircle);
+
   const weather = await fetchWeatherData(locationInput);
+
+  weatherDisplay.removeChild(loadingCircle);
+
+  const errorMessage = document.createElement('p');
+  errorMessage.classList.add('error-message');
+  errorMessage.textContent = '';
+
+  if (typeof weather !== 'object') {
+    errorMessage.textContent = weather;
+    weatherDisplay.appendChild(errorMessage);
+    return;
+  }
+
+  if (document.querySelector('.error-message')) {
+    weatherDisplay.removeChild(errorMessage);
+  }
 
   const label = document.querySelector('.location-label');
   const welcomeContainer = document.querySelector('.welcome-container');
@@ -30,8 +51,6 @@ async function renderWeatherData() {
       .querySelector('#userInteractContainer')
       .removeChild(welcomeContainer);
   }
-
-  weatherDisplay.textContent = '';
 
   const todayIcon = icons[`${weather[0].icon}.svg`];
 
